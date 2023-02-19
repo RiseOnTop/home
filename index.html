@@ -2,16 +2,88 @@
 <html>
   <head>
     <title>Random Number Generator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'FSP DEMO - Gryclff CF xtr Bld';
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+      }
+      nav {
+        display: inline-block;
+        font-family: 'FSP DEMO - Gryclff CF xtr Bld';
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+      }
+      nav a:hover {
+        background-color: white;
+        color: #333;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height:100vh;
+        background-image: url('https://media.discordapp.net/attachments/1041401891944398919/1076880680836927558/bg.png?width=1193&height=671');
+        background-size: cover;
+      }
+      button {
+        font-size: 24px;
+        padding: 12px 24px;
+        font-family: 'FSP DEMO - Gryclff CF Dm Bld';
+      }
+      h1 {
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>Random Number Generator</h1>
-    <p id="result"></p>
-    <button onclick="generateRandomNumber()">Generate</button>
+    <header>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <div id="container">
+      <h1>Lances Shitty Website</h1>
+      <p id="result"></p>
+      <button onclick="generateRandomUrl()">Go Somewhere</button>
+    </div>
 
     <script>
       function generateRandomNumber() {
-        var randomNumber = Math.floor(Math.random() * 100) + 1;
-        document.getElementById("result").innerHTML = "Random number: " + randomNumber;
+        var randomNumber = Math.floor(Math.random() * 3) + 1;
+        return randomNumber;
+      }
+
+      function generateRandomUrl() {
+        var randomNumber = generateRandomNumber();
+        var url;
+        switch (randomNumber) {
+          case 1:
+            url = 'https://www.youtube.com';
+            break;
+          case 2:
+            url = 'https://www.google.com';
+            break;
+          case 3:
+            url = 'https://www.bing.com';
+            break;
+        }
+        window.location.href = url;
       }
     </script>
   </body>
